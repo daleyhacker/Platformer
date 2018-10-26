@@ -34,13 +34,19 @@ gridline = LineStyle(1, grey)
 grid=RectangleAsset(30,30,gridline,white)
 
 rectangle = RectangleAsset(50, 50, blkline, white)
- 
-rectangle1 = Sprite(rectangle, (0,0))
 
-for y in range(0, 17):
-    for x in range(0, 21):
-        Sprite(rectangle, (0*x, 0*y))
+#---------------------------------------------------------------------------
+#Grid
+for x in range(0, 21):
+    for y in range(0, 11):
+        Sprite(rectangle, (50*x, 50*y))
+#---------------------------------------------------------------------------
+#Tracking Mouse Movement
+class MouseEvent(_Event):
+    def __init__ var mousemove # identifies where the mouse is
 
+var keypress # identifies when a key is pressed
+var key # which key is pressed
 myapp = App()
 myapp.run()
 
