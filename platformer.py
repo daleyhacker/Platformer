@@ -1,6 +1,6 @@
 """
 platformer.py
-Author: 
+Author: Patrick Daley
 Credit: 
 Assignment:
 Write and submit a program that implements the sandbox platformer game:
@@ -32,4 +32,16 @@ redline = LineStyle(1, red)
 greenline = LineStyle(1, green)
 gridline = LineStyle(1, grey)
 grid=RectangleAsset(30,30,gridline,white)
+
+rectangle = RectangleAsset(50, 50, blkline, white)
+ 
+rectangle1 = Sprite(rectangle, (0,0))
+
+for y in range(0, 17):
+    for x in range(0, 21):
+        Sprite(rectangle, (0*x, 0*y))
+
+myapp = App()
+myapp.run()
+
 
