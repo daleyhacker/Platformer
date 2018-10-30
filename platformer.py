@@ -33,6 +33,8 @@ greenline = LineStyle(1, green)
 gridline = LineStyle(1, grey)
 grid=RectangleAsset(30,30,gridline,white)
 
+myapp = App()
+
 rectangle = RectangleAsset(50, 50, blkline, white)
 
 #---------------------------------------------------------------------------
@@ -43,33 +45,11 @@ for x in range(0, 21):
 #---------------------------------------------------------------------------
 #Player
 
-player = RectangleAsset(15,30, blkline, red)
-Sprite(player,(20,20))
-player.direction = 1
-player.go = True
-def reverse(p):
-    p.direction *= -1
-def step():
-    if player.go:
-        player.x += ball.direction
-        if player.x + player.width > myapp.width or player.x < 0:
-            ball.x -= player.direction
-            reverse(player)
+player1 = RectangleAsset(15,30, blkline, red)
+player = Sprite(player1,(20,20))
 
-# Handle the mouse click
-def mouseClick(event):
-    #RectangleAsset(50, 50, blkline, black)
-    Sprite(player)
-"""
-#Tracking Mouse Movement
-class MouseEvent(_Event):
-    def __init__ var mousemove # identifies where the mouse is
 
-var keypress # identifies when a key is pressed
-var key # which key is pressed
-"""
 
-myapp = App()
 myapp.run()
 
 
