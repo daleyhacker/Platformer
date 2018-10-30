@@ -41,12 +41,19 @@ for x in range(0, 21):
     for y in range(0, 11):
         Sprite(rectangle, (50*x, 50*y))
 #---------------------------------------------------------------------------
+# Handle the mouse click
+def mouseClick(event):
+    RectangleAsset(50, 50, blkline, black)
+
+"""
 #Tracking Mouse Movement
 class MouseEvent(_Event):
     def __init__ var mousemove # identifies where the mouse is
 
 var keypress # identifies when a key is pressed
 var key # which key is pressed
+"""
+
 myapp = App()
 myapp.run()
 
