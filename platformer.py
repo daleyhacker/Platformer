@@ -44,11 +44,10 @@ for x in range(0, 21):
         Sprite(rectangle, (50*x, 50*y))
 #---------------------------------------------------------------------------
 #Player
-
 player1 = RectangleAsset(15,30, blkline, red)
 player = Sprite(player1,(20,20))
 
-
+#def player(event):
 
 myapp.run()
 
