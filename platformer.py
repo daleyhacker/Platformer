@@ -41,10 +41,25 @@ for x in range(0, 21):
     for y in range(0, 11):
         Sprite(rectangle, (50*x, 50*y))
 #---------------------------------------------------------------------------
+#Player
+
+player = RectangleAsset(15,30, blkline, red)
+Sprite(player,(20,20))
+player.direction = 1
+player.go = True
+def reverse(p):
+    p.direction *= -1
+def step():
+    if player.go:
+        player.x += ball.direction
+        if player.x + player.width > myapp.width or player.x < 0:
+            ball.x -= player.direction
+            reverse(player)
+
 # Handle the mouse click
 def mouseClick(event):
-    RectangleAsset(50, 50, blkline, black)
-
+    #RectangleAsset(50, 50, blkline, black)
+    Sprite(player)
 """
 #Tracking Mouse Movement
 class MouseEvent(_Event):
