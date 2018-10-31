@@ -51,9 +51,9 @@ player1 = RectangleAsset(15,30, blkline, red)
 player = Sprite(player1,(20,20))
 
 def mouseClick(event):
-    event.x = rectangleblk.x
-    event.y = rectangle.blk.y
-    Sprite(rectangle.blk(x,y))
+    rectangleblk.x = event.x
+    rectangleblk.y = event.y
+    Sprite(rectangleblk,(event.x,event.y))
 
 
 #Listening for a Click
