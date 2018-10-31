@@ -36,6 +36,9 @@ grid=RectangleAsset(30,30,gridline,white)
 myapp = App()
 
 rectangle = RectangleAsset(50, 50, blkline, white)
+rectangleblk = RectangleAsset(50,50, blkline, black)
+
+
 
 #---------------------------------------------------------------------------
 #Grid
@@ -46,6 +49,15 @@ for x in range(0, 21):
 #Player
 player1 = RectangleAsset(15,30, blkline, red)
 player = Sprite(player1,(20,20))
+
+def mouseClick(event):
+    event.x = rectangleblk.x
+    event.y = rectangle.blk.y
+    Sprite(rectangle.blk(x,y))
+
+
+#Listening for a Click
+myapp.listenMouseEvent('click',mouseClick)
 
 #def player(event):
 
