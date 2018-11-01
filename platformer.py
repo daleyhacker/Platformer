@@ -1,7 +1,7 @@
 """
 platformer.py
 Author: Patrick Daley
-Credit: 
+Credit: Tristan, 
 Assignment:
 Write and submit a program that implements the sandbox platformer game:
 https://github.com/HHS-IntroProgramming/Platformer
@@ -48,8 +48,8 @@ for x in range(0, 21):
         Sprite(rectangle, (50*x, 50*y))
 #---------------------------------------------------------------------------
 #Player
-player1 = RectangleAsset(15,30, blkline, red)
-player = Sprite(player1,(20,20))
+player = RectangleAsset(15,30, blkline, red)
+player1 = Sprite(player,(20,20))
 
 def mouseClick(event):
     rectangleblk.x = event.x
@@ -59,12 +59,11 @@ def mouseClick(event):
     Sprite(rectangleblk,(x,y))
 
 
-
-
 #Listening for a Click
 myapp.listenMouseEvent('click',mouseClick)
 
-#def player(event):
+def keypress(event):
+    player
 
 myapp.run()
 
