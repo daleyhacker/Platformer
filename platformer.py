@@ -36,7 +36,7 @@ grid=RectangleAsset(30,30,gridline,white)
 
 myapp = App()
 
-rectangle = RectangleAsset(50, 50, blkline, white)
+rectangle = RectangleAsset(50, 50, noline, white)
 rectangleblk = RectangleAsset(50,50, blkline, black)
 
 
