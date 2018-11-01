@@ -7,6 +7,7 @@ Write and submit a program that implements the sandbox platformer game:
 https://github.com/HHS-IntroProgramming/Platformer
 """
 from ggame import App, Color, LineStyle, Sprite, RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset, ImageAsset, Frame
+from math import floor
 
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 800
@@ -53,7 +54,11 @@ player = Sprite(player1,(20,20))
 def mouseClick(event):
     rectangleblk.x = event.x
     rectangleblk.y = event.y
-    Sprite(rectangleblk,(event.x,event.y))
+    x = floor(event.x/50)*50 #floor rounds down to the nearest whole number
+    y = floor(event.y/50)*50
+    Sprite(rectangleblk,(x,y))
+
+
 
 
 #Listening for a Click
