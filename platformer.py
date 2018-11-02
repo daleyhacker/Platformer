@@ -38,11 +38,11 @@ myapp = App()
 
 #---------------------------------------------------------------------------
 #Grid
-rectanglegrid = RectangleAsset(50, 50, noline, white)
+grid = RectangleAsset(50, 50, noline, white)
 
 for x in range(0, 21):
     for y in range(0, 11):
-        Sprite(rectanglegrid, (50*x, 50*y))
+        Sprite(grid, (50*x, 50*y))
 
 #---------------------------------------------------------------------------
 #Walls
@@ -67,16 +67,15 @@ myapp.listenMouseEvent('click',mouseClick)
 player = RectangleAsset(15,30, blkline, red)
 player1 = Sprite(player,(20,20))
 
-
+def keypress(event):
+    player
 
 
 
 
 
 #---------------------------------------------------------------------------
-#
-def keypress(event):
-    player
+
 
 myapp.run()
 
