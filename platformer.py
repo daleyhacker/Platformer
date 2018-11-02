@@ -67,14 +67,15 @@ myapp.listenMouseEvent('click',mouseClick)
 player = RectangleAsset(15,30, blkline, red)
 player1 = Sprite(player,(20,20))
 
+class Player(Sprite):
+    
+    def__init__
+    
 def keypress(event):
     player
 
 
 
-
-
-#---------------------------------------------------------------------------
 
 
 myapp.run()
