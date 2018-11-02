@@ -47,7 +47,12 @@ for x in range(0, 21):
 
 
 class Wall(Sprite):
-    pass
+    
+    def __init__(self, x, y):
+        x = floor(x/50)*50 #floor rounds down to the nearest whole number
+        y = floor(y/50)*50
+        super().__init__(rectangleblk, (x, y))
+        
 
 
 
@@ -60,11 +65,11 @@ player1 = Sprite(player,(20,20))
 
 #When mouse clicks, it will place a black rectangle on the screen where clicked.
 def mouseClick(event):
-    rectangleblk.x = event.x
-    rectangleblk.y = event.y
-    x = floor(event.x/50)*50 #floor rounds down to the nearest whole number
-    y = floor(event.y/50)*50
-    Wall(rectangleblk,(x,y))
+    #rectangleblk.x = event.x
+    #rectangleblk.y = event.y
+    #x = floor(event.x/50)*50 #floor rounds down to the nearest whole number
+    #y = floor(event.y/50)*50
+    Wall(event.x, event.y)
 
 
 #Listening for a Click
