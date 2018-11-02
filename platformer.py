@@ -36,16 +36,27 @@ grid=RectangleAsset(30,30,gridline,white)
 
 myapp = App()
 
-rectangle = RectangleAsset(50, 50, noline, white)
+rectanglegrid = RectangleAsset(50, 50, noline, white)
 rectangleblk = RectangleAsset(50,50, blkline, black)
 
 
+class rectangle(Sprite):
+    def __init__(self, length, height, color):
+        self.l = length
+        self.h = height
+        self.c = color
+
+    def volume(self):
+        return self.l * self.h * self.c
+
+rectangle1 = rectangle(50, 50, red)
+super().__init__(rectangle1, (0,0))
 
 #---------------------------------------------------------------------------
 #Grid
 for x in range(0, 21):
     for y in range(0, 11):
-        Sprite(rectangle, (50*x, 50*y))
+        Sprite(rectanglegrid, (50*x, 50*y))
 #---------------------------------------------------------------------------
 #Player
 player = RectangleAsset(15,30, blkline, red)
