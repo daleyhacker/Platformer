@@ -65,13 +65,19 @@ myapp.listenMouseEvent('click',mouseClick)
 #-------------------------------------------------------------------------------
 #Player
 player = RectangleAsset(15,30, blkline, red)
-player1 = Sprite(player,(20,20))
+#player1 = Sprite(player,(20,20))
 
 class Player(Sprite):
     
-    def__init__
-    
-def keypress(event):
+    def __init__(self, x, y):
+        x = event.x
+        y = event.y
+        super().__init__(player, (x, y))
+        myapp.listenKeyEvent("keydown", "w", keypress)
+        myapp.listenKeyEvent("keyup", "w", keypress)
+
+    def keypress(event):
+        Player(event.x, event.y)
     
 
 
