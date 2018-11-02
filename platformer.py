@@ -39,28 +39,24 @@ myapp = App()
 rectanglegrid = RectangleAsset(50, 50, noline, white)
 rectangleblk = RectangleAsset(50,50, blkline, black)
 
-
-class rectangle(Sprite):
-    def __init__(self, length, height, color):
-        self.l = length
-        self.h = height
-        self.c = color
-
-    def volume(self):
-        return self.l * self.h * self.c
-
-rectangle1 = rectangle(50, 50, red)
-super().__init__(rectangle1, (0,0))
-
 #---------------------------------------------------------------------------
 #Grid
 for x in range(0, 21):
     for y in range(0, 11):
         Sprite(rectanglegrid, (50*x, 50*y))
+
+
+class Wall(Sprite):
+    pass
+
+
+
+
 #---------------------------------------------------------------------------
 #Player
 player = RectangleAsset(15,30, blkline, red)
 player1 = Sprite(player,(20,20))
+
 
 #When mouse clicks, it will place a black rectangle on the screen where clicked.
 def mouseClick(event):
@@ -68,16 +64,18 @@ def mouseClick(event):
     rectangleblk.y = event.y
     x = floor(event.x/50)*50 #floor rounds down to the nearest whole number
     y = floor(event.y/50)*50
-    Sprite(rectangleblk,(x,y))
+    Wall(rectangleblk,(x,y))
 
 
 #Listening for a Click
 myapp.listenMouseEvent('click',mouseClick)
+
 #---------------------------------------------------------------------------
 #
 def keypress(event):
     player
 
+#super().__init__(rectangle1, (0,0))
 myapp.run()
 
 
