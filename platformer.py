@@ -36,7 +36,7 @@ grid=RectangleAsset(30,30,gridline,white)
 
 myapp = App()
 
-#---------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 #Grid
 grid = RectangleAsset(50, 50, noline, white)
 
@@ -44,7 +44,7 @@ for x in range(0, 21):
     for y in range(0, 11):
         Sprite(grid, (50*x, 50*y))
 
-#---------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 #Walls
 rectangleblk = RectangleAsset(50,50, blkline, black)
 
@@ -62,7 +62,7 @@ def mouseClick(event):
 #Listening for a Click
 myapp.listenMouseEvent('click',mouseClick)
 
-#---------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 #Player
 player = RectangleAsset(15,30, blkline, red)
 player1 = Sprite(player,(20,20))
@@ -72,10 +72,10 @@ class Player(Sprite):
     def__init__
     
 def keypress(event):
-    player
+    
 
 
-
+#-------------------------------------------------------------------------------
 
 
 myapp.run()
