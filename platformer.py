@@ -47,6 +47,7 @@ for x in range(0, 21):
 #-------------------------------------------------------------------------------
 #Walls
 rectangleblk = RectangleAsset(50,50, blkline, black)
+rectanglewhite = RectangleAsset(50,50, blkline, white)
 
 class Wall(Sprite):
     
@@ -55,29 +56,34 @@ class Wall(Sprite):
         y = floor(y/50)*50
         super().__init__(rectangleblk, (x, y))
 
-#When mouse clicks, it will place a black rectangle on the screen where clicked.
-def mouseClick(event):
-    Wall(event.x, event.y)
-
-#Listening for a Click
-myapp.listenMouseEvent('click',mouseClick)
-
+    #When mouse clicks, it will place a black rectangle on the screen where clicked.
+    def mouseClick(event):
+        Wall(event.x, event.y)
+    
+    #Listening for a Click
+    myapp.listenMouseEvent('click',mouseClick)
+    
 #-------------------------------------------------------------------------------
 #Player
-player = RectangleAsset(15,30, blkline, red)
-#player1 = Sprite(player,(20,20))
+
 
 class Player(Sprite):
+    
+    player = RectangleAsset(15,30, blkline, red)
     
     def __init__(self, x, y):
         x = event.x
         y = event.y
         super().__init__(player, (x, y))
+        myapp.listenKeyEvent('keydown', 'space', player)
+    
+    """
+    def spaceKey(event):
+        def mousemove(event):
+            Player(event.x, event.y)
+    """
+    #myapp.listenKeyEvent('keydown', 'space', spaceKey)
 
-def SpaceKey(event):
-    Player(event.x, event.y)
-
-myapp.listenKeyEvent('keydown', 'space', SpaceKey)
 
 #-------------------------------------------------------------------------------
 
