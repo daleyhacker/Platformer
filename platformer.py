@@ -73,13 +73,11 @@ class Player(Sprite):
         x = event.x
         y = event.y
         super().__init__(player, (x, y))
-        myapp.listenKeyEvent("keydown", "w", keypress)
-        myapp.listenKeyEvent("keyup", "w", keypress)
 
-    def keypress(event):
-        Player(event.x, event.y)
-    
+def SpaceKey(event):
+    Player(event.x, event.y)
 
+myapp.listenKeyEvent('keydown', 'space', SpaceKey)
 
 #-------------------------------------------------------------------------------
 
