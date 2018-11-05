@@ -84,7 +84,7 @@ class Player(Sprite):
 
 mouse = None
 
-def spaceKey(event):
+def spacekey(event):
     global mouse
     Player(mouse[0], mouse[1])
     
@@ -92,8 +92,8 @@ def mousemove(event):
     global mouse
     mouse = (event.x, event.y)
 
-myapp.listenKeyEvent('keydown', 'space', spaceKey)
-myapp.listenMouseEvent('move', mousemove)
+myapp.listenKeyEvent('keydown', 'space', spacekey)
+myapp.listenMouseEvent('mousemove', mousemove)
 
 myapp.run()
 
