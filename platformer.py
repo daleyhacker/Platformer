@@ -74,12 +74,8 @@ class Player(Sprite):
     def __init__(self, x, y):
         super().__init__(player, (x, y))
     
-    
-    
-    
-
-#-------------------------------------------------------------------------------
-
+#----------------------
+#Prints the player where the mouse is
 mouse = None
 
 def spacekey(event):
@@ -92,6 +88,8 @@ def mousemove(event):
 
 myapp.listenKeyEvent('keydown', 'space', spacekey)
 myapp.listenMouseEvent('mousemove', mousemove)
+#-------------------------------------------------------------------------------
+
 
 myapp.run()
 
