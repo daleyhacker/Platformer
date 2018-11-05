@@ -56,12 +56,12 @@ class Wall(Sprite):
         y = floor(y/50)*50
         super().__init__(rectangleblk, (x, y))
 
-    #When mouse clicks, it will place a black rectangle on the screen where clicked.
-    def mouseClick(event):
-        Wall(event.x, event.y)
-    
-    #Listening for a Click
-    myapp.listenMouseEvent('click',mouseClick)
+#When mouse clicks, it will place a black rectangle on the screen where clicked.
+def mouseClick(event):
+    Wall(event.x, event.y)
+
+#Listening for a Click
+myapp.listenMouseEvent('click',mouseClick)
     
 #-------------------------------------------------------------------------------
 #Player
@@ -93,7 +93,7 @@ def mousemove(event):
     mouse = (event.x, event.y)
 
 myapp.listenKeyEvent('keydown', 'space', spaceKey)
-
+myapp.listenMouseEvent('move', mousemove)
 
 myapp.run()
 
