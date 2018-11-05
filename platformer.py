@@ -66,10 +66,10 @@ myapp.listenMouseEvent('click',mouseClick)
 #-------------------------------------------------------------------------------
 #Player
 
+player = RectangleAsset(15,30, blkline, red)
 
 class Player(Sprite):
     
-    player = RectangleAsset(15,30, blkline, red)
     
     def __init__(self, x, y):
         super().__init__(player, (x, y))
