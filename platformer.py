@@ -72,8 +72,6 @@ class Player(Sprite):
     player = RectangleAsset(15,30, blkline, red)
     
     def __init__(self, x, y):
-        x = event.x
-        y = event.y
         super().__init__(player, (x, y))
     
     
