@@ -75,17 +75,24 @@ class Player(Sprite):
         x = event.x
         y = event.y
         super().__init__(player, (x, y))
-        myapp.listenKeyEvent('keydown', 'space', player)
     
-    """
-    def spaceKey(event):
-        def mousemove(event):
-            Player(event.x, event.y)
-    """
-    #myapp.listenKeyEvent('keydown', 'space', spaceKey)
-
+    
+    
+    
 
 #-------------------------------------------------------------------------------
+
+mouse = None
+
+def spaceKey(event):
+    global mouse
+    Player(mouse[0], mouse[1])
+    
+def mousemove(event):
+    global mouse
+    mouse = (event.x, event.y)
+
+myapp.listenKeyEvent('keydown', 'space', spaceKey)
 
 
 myapp.run()
