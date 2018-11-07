@@ -91,16 +91,33 @@ def mousemove(event):
 myapp.listenKeyEvent('keydown', 'space', spacekey)
 myapp.listenMouseEvent('mousemove', mousemove)
 #--------------------------------
-#Make the player move
+#Makes the player move to the left
 def Akey(event):
     global playersprite
     if playersprite:
-        playersprite.x -= 1
-    
+        playersprite.x -= 10
 
 myapp.listenKeyEvent('keydown', 'a', Akey)
 
+#----------------------
+#Makes the player move to the right
+def Dkey(event):
+    global playersprite
+    if playersprite:
+        playersprite.x += 10
 
+myapp.listenKeyEvent('keydown', 'd', Dkey)
+
+#------------------------
+#Makes the player move up
+def Wkey(event):
+    global playersprite
+    if playersprite:
+        playersprite.y -= 10
+
+
+#-------------------------------------------------------------------------------
+myapp.listenKeyEvent('keydown', 'w', Wkey)
 
 myapp.run()
 
