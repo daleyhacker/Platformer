@@ -67,6 +67,7 @@ myapp.listenMouseEvent('click',mouseClick)
 #Player
 
 player = RectangleAsset(15,30, blkline, red)
+playersprite = None
 
 class Player(Sprite):
     
@@ -80,7 +81,8 @@ mouse = None
 
 def spacekey(event):
     global mouse
-    Player(mouse[0], mouse[1])
+    global playersprite
+    playersprite = Player(mouse[0], mouse[1])
     
 def mousemove(event):
     global mouse
@@ -90,7 +92,13 @@ myapp.listenKeyEvent('keydown', 'space', spacekey)
 myapp.listenMouseEvent('mousemove', mousemove)
 #--------------------------------
 #Make the player move
+def Akey(event):
+    global playersprite
+    if playersprite:
+        playersprite.x -= 1
+    
 
+myapp.listenKeyEvent('keydown', 'a', Akey)
 
 
 
