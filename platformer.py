@@ -38,12 +38,13 @@ myapp = App()
 
 #-------------------------------------------------------------------------------
 #Grid
+"""
 grid = RectangleAsset(50, 50, noline, white)
 
 for x in range(0, 21):
     for y in range(0, 11):
         Sprite(grid, (50*x, 50*y))
-
+"""
 #-------------------------------------------------------------------------------
 #Walls
 rectangleblk = RectangleAsset(50,50, blkline, black)
@@ -96,6 +97,9 @@ def Akey(event):
     global playersprite
     if playersprite:
         playersprite.x -= 10
+    wallcollisions = playersprite.collidingWithSprites(Wall)
+    if wallcollisions:
+        playersprite.x +=10
 
 myapp.listenKeyEvent('keydown', 'a', Akey)
 
@@ -130,7 +134,7 @@ myapp.listenKeyEvent('keydown', 's', Skey)
 #-------------------------------------------------------------------------------
 #Gravity
 #def collidingWithSprites(self, sclass=None):
-    
+
 
 
 
