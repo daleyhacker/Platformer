@@ -113,11 +113,27 @@ myapp.listenKeyEvent('keydown', 'd', Dkey)
 def Wkey(event):
     global playersprite
     if playersprite:
-        playersprite.y -= 10
+        playersprite.y -= 30
 
+myapp.listenKeyEvent('keydown', 'w', Wkey)
+
+#Not needed because Gravity will do this
+#Makes the player move down
+"""
+def Skey(event):
+    global playersprite
+    if playersprite:
+        playersprite.y += 30
+myapp.listenKeyEvent('keydown', 's', Skey)
+"""
 
 #-------------------------------------------------------------------------------
-myapp.listenKeyEvent('keydown', 'w', Wkey)
+#Gravity
+#def collidingWithSprites(self, sclass=None):
+    
+
+
+
 
 myapp.run()
 
