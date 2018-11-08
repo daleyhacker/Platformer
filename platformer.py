@@ -99,7 +99,8 @@ def Akey(event):
         playersprite.x -= 10
     wallcollisions = playersprite.collidingWithSprites(Wall)
     if wallcollisions:
-        playersprite.x +=10
+        while wallcollisions:
+            playersprite.x +=1
 
 myapp.listenKeyEvent('keydown', 'a', Akey)
 
