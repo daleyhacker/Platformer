@@ -143,7 +143,10 @@ myapp.listenKeyEvent('keydown', 's', Skey)
 
 #-------------------------------------------------------------------------------
 #Gravity
-#def collidingWithSprites(self, sclass=None):
+if wallcollisions = playersprite.collidingWithSprites(Wall):
+    playersprite.y = y
+else:
+    playersprite.y +=10
 
 
 
