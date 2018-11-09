@@ -127,6 +127,10 @@ def Wkey(event):
     while wallcollisions:
         playersprite.y +=1
         wallcollisions = playersprite.collidingWithSprites(Wall)
+    while wallcollisions:
+        playersprite.y +=0
+        else:
+            playersprite.y +=10
 
 
 myapp.listenKeyEvent('keydown', 'w', Wkey)
@@ -143,12 +147,12 @@ myapp.listenKeyEvent('keydown', 's', Skey)
 
 #-------------------------------------------------------------------------------
 #Gravity
-wallcollisions = playersprite.collidingWithSprites(Wall)
+"""wallcollisions = Player.collidingWithSprites(Wall)
 if wallcollisions:
-    playersprite.y = y
+    Player.y = y
 else:
-    playersprite.y +=10
-
+    Player.y +=10
+"""
 
 
 
