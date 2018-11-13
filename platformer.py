@@ -131,24 +131,18 @@ def Wkey(event):
 
 myapp.listenKeyEvent('keydown', 'w', Wkey)
 
-#Not needed because Gravity will do this
-#Makes the player move down
-"""
-def Skey(event):
-    global playersprite
-    if playersprite:
-        playersprite.y += 30
-myapp.listenKeyEvent('keydown', 's', Skey)
-"""
+
 
 #-------------------------------------------------------------------------------
 #Gravity
 class Gravity(Player):
-    wallcollisions = playersprite.collidingWithSprites(Wall)
-    if wallcollisions:
+    def gravity(event):
+        global playersprite
+        wallcollisions = playersprite.collidingWithSprites(Wall)
+        if wallcollisions:
             playersprite.y +=0
-    else:
-        playersprite.y +=10
+        else:
+            playersprite.y +=10
 
 
 
@@ -164,4 +158,13 @@ def mouseClick(event):
     x = floor(event.x/50)*50 #floor rounds down to the nearest whole number
     y = floor(event.y/50)*50
     Wall(event.x, event.y)
+
+#Not needed because Gravity will do this
+#Makes the player move down
+
+def Skey(event):
+    global playersprite
+    if playersprite:
+        playersprite.y += 30
+myapp.listenKeyEvent('keydown', 's', Skey)
 """
