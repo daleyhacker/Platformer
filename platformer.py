@@ -142,9 +142,9 @@ def step():
         if wallcollisions:
             playersprite.y +=0
         else:
-            playersprite.y +=10
+            playersprite.y +=5
 
-
+#-------------------------------------------------------------------------------
 myapp.run(step)
 
 
