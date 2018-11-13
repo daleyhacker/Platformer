@@ -135,16 +135,17 @@ myapp.listenKeyEvent('keydown', 'w', Wkey)
 
 #-------------------------------------------------------------------------------
 #Gravity
+def step():
+    global playersprite
+    if playersprite:
+        wallcollisions = playersprite.collidingWithSprites(Wall)
+        if wallcollisions:
+            playersprite.y +=0
+        else:
+            playersprite.y +=10
 
-wallcollisions = playersprite.collidingWithSprites(Wall)
-if playersprite:
-    if wallcollisions:
-        playersprite.y +=0
-    else:
-        playersprite.y +=10
 
-
-myapp.run()
+myapp.run(step)
 
 
 
