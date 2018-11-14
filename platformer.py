@@ -139,7 +139,7 @@ def Akey(event):
     if playersprite:
         playersprite.x -= 10
     wallcollisionsLeft = playersprite.collidingWithSprites(BorderLeft)
-    while wallcollisions:
+    while wallcollisionsLeft:
         playersprite.x +=1
         wallcollisionsLeft = playersprite.collidingWithSprites(BorderLeft)
 
@@ -152,7 +152,7 @@ def Dkey(event):
     if playersprite:
         playersprite.x += 10
     wallcollisionsRight = playersprite.collidingWithSprites(BorderRight)
-    while wallcollisions:
+    while wallcollisionsRight:
         playersprite.x -=1
         wallcollisionsRight = playersprite.collidingWithSprites(BorderRight)
 
@@ -164,10 +164,10 @@ def Wkey(event):
     global playersprite
     if playersprite:
         playersprite.y -= 30
-    wallcollisions = playersprite.collidingWithSprites(Wall)
-    while wallcollisions:
+    wallcollisionsUp = playersprite.collidingWithSprites(BorderUp)
+    while wallcollisionsUp:
         playersprite.y +=1
-        wallcollisions = playersprite.collidingWithSprites(Wall)
+        wallcollisionsUp = playersprite.collidingWithSprites(BorderUp)
 
 
 myapp.listenKeyEvent('keydown', 'w', Wkey)
