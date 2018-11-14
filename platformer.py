@@ -163,7 +163,7 @@ myapp.listenKeyEvent('keydown', 'd', Dkey)
 def Wkey(event):
     global playersprite
     if playersprite:
-        playersprite.y -= 30
+        playersprite.y -= 50
     wallcollisionsUp = playersprite.collidingWithSprites(BorderUp)
     while wallcollisionsUp:
         playersprite.y +=1
@@ -171,7 +171,6 @@ def Wkey(event):
 
 
 myapp.listenKeyEvent('keydown', 'w', Wkey)
-
 
 
 #-------------------------------------------------------------------------------
