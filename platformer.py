@@ -49,6 +49,8 @@ for x in range(0, 21):
 #Walls
 rectangleblk = RectangleAsset(50,50, blkline, black)
 rectanglewhite = RectangleAsset(50,50, blkline, white)
+rectangleborder = RectangleAsset(1,50, blkline, black)
+Sprite(rectangleborder)
 
 class Wall(Sprite):
     
