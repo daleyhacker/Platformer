@@ -49,8 +49,8 @@ for x in range(0, 21):
 #Walls
 rectangleblk = RectangleAsset(50,50, blkline, black)
 rectanglewhite = RectangleAsset(50,50, blkline, white)
-rectangleborder = RectangleAsset(1,40, redline, black)
-rectangleUp = RectangleAsset(50,1, redline, black)
+rectangleborder = RectangleAsset(1,40, blkline, black)
+rectangleUp = RectangleAsset(50,1, blkline, black)
 
 class Wall(Sprite):
     
@@ -83,7 +83,7 @@ myapp.listenMouseEvent('click',mouseClick)
     
 class BorderLeft(Sprite):
     def __init__(self, x2, y2):
-        x2 = floor(x2/50)*50+50
+        x2 = floor(x2/50)*50+49
         y2 = floor(y2/50)*50+10
         super().__init__(rectangleborder,(x2, y2))
 
