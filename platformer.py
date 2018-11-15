@@ -147,6 +147,7 @@ myapp.listenKeyEvent('keydown', 'a', Akey)
 
 #----------------------
 #Makes the player move to the right
+
 def Dkey(event):
     global playersprite
     if playersprite:
@@ -163,7 +164,10 @@ myapp.listenKeyEvent('keydown', 'd', Dkey)
 def Wkey(event):
     global playersprite
     if playersprite:
-        playersprite.y -= 50
+        Vy = 0
+        Vy = Vy +100
+        y = playersprite.y - Vy
+        playersprite.y = y-1
     wallcollisionsUp = playersprite.collidingWithSprites(BorderUp)
     while wallcollisionsUp:
         playersprite.y +=1
