@@ -192,8 +192,12 @@ def step():
             if WkeyPress:
                 playersprite.vy +=.1
                 playersprite.y+=playersprite.vy
-                if wallcollisionsUp:
+                wallcollisionsUp = playersprite.collidingWithSprites(Wall)
+                while wallcollisionsUp:
+                    playersprite.vy+=1
                     playersprite.y+=playersprite.vy
+                    wallcollisionsUp = playersprite.collidingWithSprites(Wall)
+                    
         else:
             playersprite.vy +=0.1 
             playersprite.y+=playersprite.vy
