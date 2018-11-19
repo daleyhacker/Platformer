@@ -115,6 +115,7 @@ class Player(Sprite):
     
     
     def __init__(self, x, y):
+        self.vy = 0
         super().__init__(player, (x, y))
     
 #----------------------
@@ -165,10 +166,17 @@ def Wkey(event):
     global playersprite
     if playersprite:
         playersprite.y -=50
+        playersprite.vy -=15
     wallcollisionsUp = playersprite.collidingWithSprites(Wall)
     while wallcollisionsUp:
         playersprite.y +=1
         wallcollisionsUp = playersprite.collidingWithSprites(Wall)
+
+def WkeyUp(event):
+    global playersprite
+    if playersprite:
+        playersprite.y +=0
+    
 
 def step():
     global playersprite
@@ -179,8 +187,9 @@ def step():
         else:
             playersprite.y +=0
 
-myapp.listenKeyEvent('keydown', 'w', Wkey)
-myapp.listenKeyEvent('keyup', 'w', Wkey)
+WkeyPress = myapp.listenKeyEvent('keydown', 'w', Wkey)
+WkeyPress
+myapp.listenKeyEvent('keyup', 'w', WkeyUp)
 
 #-------------------------------------------------------------------------------
 #Gravity
@@ -188,14 +197,15 @@ def step():
     global playersprite
     if playersprite:
         wallcollisions = playersprite.collidingWithSprites(Wall)
-        if wallcollisions and Wkey:
-            playersprite.y -=100
-        else:
-            playersprite.y +=0
         if wallcollisions:
             playersprite.y +=0
+            if WkeyPress:
+                playersprite.vy +=1
+                playersprite.y+=playersprite.vy
         else:
             playersprite.y +=5
+        
+        
 
 #-------------------------------------------------------------------------------
 myapp.run(step)
