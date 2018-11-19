@@ -175,12 +175,12 @@ def step():
     if playersprite:
         wallcollisions = playersprite.collidingWithSprites(Wall)
         if wallcollisions and Wkey:
-            playersprite.y -=10
+            playersprite.y -=100
         else:
             playersprite.y +=0
 
 myapp.listenKeyEvent('keydown', 'w', Wkey)
-
+myapp.listenKeyEvent('keyup', 'w', Wkey)
 
 #-------------------------------------------------------------------------------
 #Gravity
@@ -188,6 +188,10 @@ def step():
     global playersprite
     if playersprite:
         wallcollisions = playersprite.collidingWithSprites(Wall)
+        if wallcollisions and Wkey:
+            playersprite.y -=100
+        else:
+            playersprite.y +=0
         if wallcollisions:
             playersprite.y +=0
         else:
@@ -209,10 +213,4 @@ def mouseClick(event):
 
 #Not needed because Gravity will do this
 #Makes the player move down
-
-def Skey(event):
-    global playersprite
-    if playersprite:
-        playersprite.y += 30
-myapp.listenKeyEvent('keydown', 's', Skey)
 """
