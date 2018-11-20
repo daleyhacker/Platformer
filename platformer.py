@@ -164,6 +164,8 @@ myapp.listenKeyEvent('keydown', 'd', Dkey)
 #Makes the player move up
 def Wkey(event):
     global playersprite
+    global wkeyPress
+    wkeyPress = True
     if playersprite:
         wallcollisions = playersprite.collidingWithSprites(Wall)
         if wallcollisions:
@@ -176,11 +178,13 @@ def Wkey(event):
 
 def WkeyUp(event):
     global playersprite
+    global wkeyPress
+    wkeyPress = False
     if playersprite:
         playersprite.y +=0
 
-WkeyPress = myapp.listenKeyEvent('keydown', 'w', Wkey)
-WkeyPress
+WkeyPress = False
+myapp.listenKeyEvent('keydown', 'w', Wkey)
 myapp.listenKeyEvent('keyup', 'w', WkeyUp)
 
 #-------------------------------------------------------------------------------
