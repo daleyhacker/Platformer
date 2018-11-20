@@ -165,12 +165,14 @@ myapp.listenKeyEvent('keydown', 'd', Dkey)
 def Wkey(event):
     global playersprite
     if playersprite:
-        playersprite.y -=10
-        playersprite.vy = -5
-    wallcollisionsUp = playersprite.collidingWithSprites(Wall)
-    while wallcollisionsUp:
-        playersprite.y +=1
+        wallcollisions = playersprite.collidingWithSprites(Wall)
+        if wallcollisions:
+            playersprite.y -=10
+            playersprite.vy = -5
         wallcollisionsUp = playersprite.collidingWithSprites(Wall)
+        while wallcollisionsUp:
+            playersprite.y +=1
+            wallcollisionsUp = playersprite.collidingWithSprites(Wall)
 
 def WkeyUp(event):
     global playersprite
@@ -193,11 +195,12 @@ def step():
                 playersprite.vy +=.1
                 playersprite.y+=playersprite.vy
                 wallcollisionsUp = playersprite.collidingWithSprites(Wall)
-                while wallcollisionsUp:
-                    playersprite.vy+=1
-                    playersprite.y+=playersprite.vy
-                    wallcollisionsUp = playersprite.collidingWithSprites(Wall)
-                    
+                if wallcollisionsUp:
+                    playersprite.vy = .1
+                    while wallcollisionsUp:
+                        playersprite.y += 1
+                        wallcollisionsUp = playersprite.collidingWithSprites(Wall)
+                
         else:
             playersprite.vy +=0.1 
             playersprite.y+=playersprite.vy
