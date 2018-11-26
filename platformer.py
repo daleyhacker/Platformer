@@ -125,6 +125,8 @@ mouse = None
 def spacekey(event):
     global mouse
     global playersprite
+    if playersprite:
+        playersprite.destroy()
     playersprite = Player(mouse[0], mouse[1])
     
 def mousemove(event):
@@ -200,6 +202,7 @@ def step():
                 playersprite.y+=playersprite.vy
                 wallcollisionsUp = playersprite.collidingWithSprites(Wall)
                 if wallcollisionsUp:
+                    playersprite.y +=1
                     playersprite.vy = .1
                     while wallcollisionsUp:
                         playersprite.y += 1
@@ -209,7 +212,17 @@ def step():
             playersprite.vy +=0.1 
             playersprite.y+=playersprite.vy
         
+#-------------------------------------------------------------------------------
+#Destroy Sprite
 
+def QKey(event):
+    global playersprite
+    if playersprite:
+        playersprite.visible = False
+        playersprite.destroy()
+        playersprite = None
+
+myapp.listenKeyEvent('keydown', 'q', QKey)
 #-------------------------------------------------------------------------------
 myapp.run(step)
 
