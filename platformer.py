@@ -136,6 +136,22 @@ def mousemove(event):
 myapp.listenKeyEvent('keydown', 'space', spacekey)
 myapp.listenMouseEvent('mousemove', mousemove)
 #--------------------------------
+#Spring
+spring = RectangleAsset(15,5, blackline, blue)
+springsprite = None
+class Spring(Sprite):
+    def __init__(self, x, y):
+        super().__init__(rectangleblk, (x, y))
+
+def Skey(event):
+    global mouse
+    global springsprite
+    
+myapp.listenKeyEvent('keydown', 's', Skey)    
+
+
+#-------------------------------------------------------------------------------
+
 #Makes the player move to the left
 def Akey(event):
     global playersprite
@@ -224,6 +240,7 @@ def QKey(event):
 
 myapp.listenKeyEvent('keydown', 'q', QKey)
 #-------------------------------------------------------------------------------
+
 myapp.run(step)
 
 
