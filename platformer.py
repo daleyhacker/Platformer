@@ -146,7 +146,7 @@ class Spring(Sprite):
 def Skey(event):
     global mouse
     global springsprite
-    springsprite = Spring(mouse[0], mouse[1]
+    springsprite = Spring(mouse[0], mouse[1])
     
 myapp.listenKeyEvent('keydown', 's', Skey)    
 
