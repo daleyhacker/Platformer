@@ -137,7 +137,7 @@ myapp.listenKeyEvent('keydown', 'space', spacekey)
 myapp.listenMouseEvent('mousemove', mousemove)
 #--------------------------------
 #Spring
-spring = RectangleAsset(15,5, blackline, blue)
+Spring = RectangleAsset(15,5, blkline, blue)
 springsprite = None
 class Spring(Sprite):
     def __init__(self, x, y):
@@ -146,6 +146,7 @@ class Spring(Sprite):
 def Skey(event):
     global mouse
     global springsprite
+    springsprite = Spring(mouse[0], mouse[1]
     
 myapp.listenKeyEvent('keydown', 's', Skey)    
 
