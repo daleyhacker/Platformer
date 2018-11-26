@@ -228,7 +228,16 @@ def step():
         else:
             playersprite.vy +=0.1 
             playersprite.y+=playersprite.vy
-        
+    
+    elif springsprite:
+        global springsprite
+        if springsprite:
+            wallcollisions = springsprite.collidingWithSprites(Wall)
+            if wallcollisions:
+                springsprite.y +=0
+            else:
+                springsprite.vy +=.1
+                springsprite.y +=springsprite.vy
 #-------------------------------------------------------------------------------
 #Destroy Sprite
 
