@@ -1,7 +1,7 @@
 """
 platformer.py
 Author: Patrick Daley
-Credit: Tristan, 
+Credit: Tristan, Mr. Dennison, Class Resources
 Assignment:
 Write and submit a program that implements the sandbox platformer game:
 https://github.com/HHS-IntroProgramming/Platformer
@@ -141,6 +141,7 @@ spring = RectangleAsset(15,5, blkline, blue)
 springsprite = None
 class Spring(Sprite):
     def __init__(self, x, y):
+        self.vy = 0
         super().__init__(spring, (x, y))
 
 def Skey(event):
