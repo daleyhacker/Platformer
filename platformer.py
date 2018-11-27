@@ -153,7 +153,8 @@ def Skey(event):
     
 myapp.listenKeyEvent('keydown', 's', Skey)
 
-if playersprite.collidingwithSprite(Spring):
+SpringJump = playersprite.collidingWithSprites(Spring)
+if SpringJump:
     playersprite.y-=10
     playersprite.vy +=.08
 
