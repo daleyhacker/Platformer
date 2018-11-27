@@ -151,8 +151,11 @@ def Skey(event):
         springsprite.destroy()
     springsprite = Spring(mouse[0], mouse[1])
     
-myapp.listenKeyEvent('keydown', 's', Skey)    
+myapp.listenKeyEvent('keydown', 's', Skey)
 
+if playersprite.collidingwithSprite(Spring):
+    playersprite.y-=10
+    playersprite.vy +=.08
 
 #-------------------------------------------------------------------------------
 
