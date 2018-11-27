@@ -219,13 +219,14 @@ def step():
             if WkeyPress:
                 playersprite.vy +=.1
                 playersprite.y+=playersprite.vy
-                wallcollisionsUp = playersprite.collidingWithSprites(Wall)
+                wallcollisionsUp = playersprite.collidingWithSprites(BorderUp)
                 if wallcollisionsUp:
                     playersprite.y +=1
                     playersprite.vy = .1
+                    print('hello')
                     while wallcollisionsUp:
                         playersprite.y += 1
-                        wallcollisionsUp = playersprite.collidingWithSprites(Wall)
+                        wallcollisionsUp = playersprite.collidingWithSprites(BorderUp)
                 
         else:
             playersprite.vy +=0.1 
@@ -244,8 +245,8 @@ def step():
     if springsprite and playersprite:
         SpringJump = playersprite.collidingWithSprites(Spring)
         if SpringJump:
-            playersprite.y-=10
-            playersprite.vy +=.08
+            playersprite.y-=1
+            playersprite.vy +=.001
             playersprite.y+=playersprite.vy
 #-------------------------------------------------------------------------------
 #Destroy Sprite
