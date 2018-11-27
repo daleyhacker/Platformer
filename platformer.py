@@ -153,11 +153,6 @@ def Skey(event):
     
 myapp.listenKeyEvent('keydown', 's', Skey)
 
-SpringJump = playersprite.collidingWithSprites(Spring)
-if SpringJump:
-    playersprite.y-=10
-    playersprite.vy +=.08
-
 #-------------------------------------------------------------------------------
 
 #Makes the player move to the left
@@ -245,6 +240,13 @@ def step():
             else:
                 springsprite.vy +=.1
                 springsprite.y +=springsprite.vy
+    
+    if springsprite and playersprite:
+        SpringJump = playersprite.collidingWithSprites(Spring)
+        if SpringJump:
+            playersprite.y-=10
+            playersprite.vy +=.08
+            playersprite.y+=playersprite.vy
 #-------------------------------------------------------------------------------
 #Destroy Sprite
 
