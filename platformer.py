@@ -147,6 +147,8 @@ class Spring(Sprite):
 def Skey(event):
     global mouse
     global springsprite
+    if springsprite:
+        springsprite.destroy()
     springsprite = Spring(mouse[0], mouse[1])
     
 myapp.listenKeyEvent('keydown', 's', Skey)    
@@ -230,7 +232,7 @@ def step():
             playersprite.vy +=0.1 
             playersprite.y+=playersprite.vy
     
-    elif springsprite:
+    if springsprite:
         global springsprite
         if springsprite:
             wallcollisions = springsprite.collidingWithSprites(Wall)
