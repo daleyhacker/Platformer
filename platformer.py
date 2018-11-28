@@ -190,7 +190,7 @@ def Wkey(event):
     if playersprite:
         wallcollisions = playersprite.collidingWithSprites(Wall)
         if wallcollisions:
-            #playersprite.y -=10
+            playersprite.y -=10
             playersprite.vy = -4
         wallcollisionsUp = playersprite.collidingWithSprites(Wall)
         while wallcollisionsUp:
@@ -220,7 +220,7 @@ def step():
             if WkeyPress:
                 playersprite.vy +=.1
                 playersprite.y+=playersprite.vy
-                wallcollisionsUp = playersprite.collidingWithSprites(Wall)
+                wallcollisionsUp = playersprite.collidingWithSprites(BorderUp)
                 print('hi')
                 if wallcollisionsUp:
                     playersprite.y +=1
