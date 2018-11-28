@@ -247,7 +247,7 @@ def step():
     if springsprite and playersprite:
         SpringJump = playersprite.collidingWithSprites(Spring)
         if SpringJump:
-            playersprite.y -= 100
+            playersprite.y -= 10
             playersprite.vy += .1
             playersprite.y+=playersprite.vy
 #-------------------------------------------------------------------------------
