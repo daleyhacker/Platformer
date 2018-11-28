@@ -219,7 +219,7 @@ def step():
         if wallcollisions:
             playersprite.y +=0
             #print('there', WkeyPress)
-        if WkeyPress and wallcollisions:
+        elif WkeyPress:
             print('hi')
             playersprite.vy +=.1
             playersprite.y+=playersprite.vy
