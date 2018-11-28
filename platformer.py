@@ -190,7 +190,7 @@ def Wkey(event):
     if playersprite:
         wallcollisions = playersprite.collidingWithSprites(Wall)
         if wallcollisions:
-            playersprite.y -=10
+            #playersprite.y -=10
             playersprite.vy = -4
         wallcollisionsUp = playersprite.collidingWithSprites(Wall)
         while wallcollisionsUp:
@@ -247,8 +247,7 @@ def step():
     if springsprite and playersprite:
         SpringJump = playersprite.collidingWithSprites(Spring)
         if SpringJump:
-            playersprite.y -= 10
-            playersprite.vy += .1
+            playersprite.vy = -6
             playersprite.y+=playersprite.vy
 #-------------------------------------------------------------------------------
 #Destroy Sprite
