@@ -191,7 +191,7 @@ def Wkey(event):
         wallcollisions = playersprite.collidingWithSprites(Wall)
         if wallcollisions:
             playersprite.y -=10
-            playersprite.vy = -5
+            playersprite.vy = -4
         wallcollisionsUp = playersprite.collidingWithSprites(Wall)
         while wallcollisionsUp:
             playersprite.y +=1
