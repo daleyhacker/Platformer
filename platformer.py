@@ -35,11 +35,13 @@ gridline = LineStyle(1, grey)
 grid=RectangleAsset(30,30,gridline,white)
 
 myapp = App()
-print("click to build a wall")
-print('press spacekey to create a player')
-print('press the a key to move left, d key to move right and w key to jump')
-print('press s key to create a spring')
-print('press q to destroy the player')
+print("Click to build a wall.")
+print('Press spacekey to create a player.')
+print('Press the a key to move left.)
+print('Press the d key to move right.')
+print('Press the w key to jump.')
+print('Press s key to create a spring.')
+print('Press q to destroy the player.')
 
 
 #-------------------------------------------------------------------------------
