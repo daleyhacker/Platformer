@@ -35,6 +35,12 @@ gridline = LineStyle(1, grey)
 grid=RectangleAsset(30,30,gridline,white)
 
 myapp = App()
+print("click to build a wall")
+print('press spacekey to create a player')
+print('press the a key to move left, d key to move right and w key to jump')
+print('press s key to create a spring')
+print('press q to destroy the player')
+
 
 #-------------------------------------------------------------------------------
 #Grid
@@ -186,7 +192,7 @@ myapp.listenKeyEvent('keydown', 'd', Dkey)
 def Wkey(event):
     global playersprite
     global WkeyPress
-    print("w depress")
+    #print("w depress")
     WkeyPress = True
     if playersprite:
         wallcollisions = playersprite.collidingWithSprites(Wall)
@@ -202,7 +208,7 @@ def WkeyUp(event):
     global playersprite
     global WkeyPress
     WkeyPress = False
-    print("W release")
+    #print("W release")
     if playersprite:
         playersprite.y +=0
 
@@ -219,15 +225,15 @@ def step():
         if wallcollisions:
             playersprite.y +=0
             #print('there', WkeyPress)
-        elif WkeyPress:
-            print('hi')
+        elif playersprite.vy <= 0:
+            #print('hi')
             playersprite.vy +=.1
             playersprite.y+=playersprite.vy
             wallcollisionsUp = playersprite.collidingWithSprites(BorderUp)
             if wallcollisionsUp:
                 playersprite.y +=1
                 playersprite.vy = .1
-                print('hello')
+                #print('hello')
                 while wallcollisionsUp:
                     playersprite.y += 1
                     wallcollisionsUp = playersprite.collidingWithSprites(Wall)
