@@ -246,15 +246,14 @@ def step():
             playersprite.vy +=0.1 
             playersprite.y+=playersprite.vy
     
-    if springsprite:
-        global springsprite
-        if Springlist:
+    if Springlist:
+        for springsprite in Springlist:
             wallcollisions = springsprite.collidingWithSprites(Wall)
             if wallcollisions:
                 springsprite.y +=0
             else:
                 springsprite.vy +=.1
-                springsprite.y +=springsprite.vy
+                springsprite.y += springsprite.vy
     
     if springsprite and playersprite:
         SpringJump = playersprite.collidingWithSprites(Spring)
