@@ -257,11 +257,11 @@ def step():
                 #for springsprite in springplace:
                 #    springsprite = (x,y)
             else:
-                springsprite.vy +=.5
+                springsprite.vy +=.3
                 springsprite.y += springsprite.vy
         for springsprite in springplace:
             # remove springsprite from springlist
-            Springlist.del[:]
+            Springlist.del[0:1]
     
     
     if springsprite and playersprite:
