@@ -1,7 +1,8 @@
 """
 platformer.py
 Author: Patrick Daley
-Credit: Tristan, Mr. Dennison, Class Resources
+Credit: Tristan, Mr. Dennison, Class Resources, 
+    https://stackoverflow.com/questions/11520492/difference-between-del-remove-and-pop-on-lists/11520540
 Assignment:
 Write and submit a program that implements the sandbox platformer game:
 https://github.com/HHS-IntroProgramming/Platformer
@@ -246,8 +247,10 @@ def step():
             playersprite.vy +=0.1 
             playersprite.y+=playersprite.vy
     
+    springplace = []
+    
     if Springlist:
-        springplace = []
+        
         for springsprite in Springlist:
             wallcollisions = springsprite.collidingWithSprites(Wall)
             if wallcollisions:
@@ -269,8 +272,12 @@ def step():
             if wallcollisions:
                 springsprite.y +=0
                 springsprite.vy =0
-    
-    
+            if springsprite and playersprite:
+                SpringJump = playersprite.collidingWithSprites(Spring)
+                if SpringJump:
+                    playersprite.vy = -6
+                    playersprite.y+=playersprite.vy
+            
     if springsprite and playersprite:
         SpringJump = playersprite.collidingWithSprites(Spring)
         if SpringJump:
