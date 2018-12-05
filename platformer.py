@@ -266,12 +266,12 @@ def step():
             # remove springsprite from springlist
             Springlist.remove(springsprite)
     
-    if springplace:
-        for springsprite in springplace:
-            wallcollisions = springsprite.collidingWithSprites(Wall)
-            if wallcollisions:
-                springsprite.y +=0
-                springsprite.vy =0
+    #if springplace:
+    #    for springsprite in springplace:
+    #        wallcollisions = springsprite.collidingWithSprites(Wall)
+    #        if wallcollisions:
+    #            springsprite.y +=0
+    #            springsprite.vy =0
            
             
     if springsprite and playersprite:
