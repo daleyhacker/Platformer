@@ -223,6 +223,8 @@ myapp.listenKeyEvent('keyup', 'w', WkeyUp)
 
 #-------------------------------------------------------------------------------
 #Gravity
+springplace = []
+
 def step():
     global playersprite
     if playersprite:
@@ -247,7 +249,7 @@ def step():
             playersprite.vy +=0.1 
             playersprite.y+=playersprite.vy
     
-    springplace = []
+    
     
     if Springlist:
         
@@ -266,13 +268,21 @@ def step():
             # remove springsprite from springlist
             Springlist.remove(springsprite)
     
-    #if springplace:
-    #    for springsprite in springplace:
-    #        wallcollisions = springsprite.collidingWithSprites(Wall)
-    #        if wallcollisions:
-    #            springsprite.y +=0
-    #            springsprite.vy =0
-           
+    if springplace:
+        if playersprite and playersprite:
+            SpringJump = playersprite.collidingWithSprites(Spring)
+            if SpringJump:
+                playersprite.vy = -6
+                playersprite.y+=playersprite.vy
+        for springsprite in springlist:
+            wallcollisions = springsprite.collidingWithSprites(Wall)
+              
+        
+        '''for springsprite in springplace:
+            wallcollisions = springsprite.collidingWithSprites(Wall)
+            if wallcollisions:
+                springsprite.y +=0
+                springsprite.vy =0'''
             
     if springsprite and playersprite:
         SpringJump = playersprite.collidingWithSprites(Spring)
